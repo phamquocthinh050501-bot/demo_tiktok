@@ -1,0 +1,11 @@
+{
+  "maxCommentLength": 100,
+  "maxNameLength": 24,
+  "maxAvatars": 200,
+  "queueMax": 2000,
+  "drainPerTick": 200,
+  "dedupeCapacity": 5000,
+  "globalRate": { "capacity": 50, "refillPerSec": 25 },
+  "likeBatchMs": 1000,
+  "cooldownMs": { "join": 5000, "move": 3000, "emote": 3000, "escape": 30000, "info": 5000 }
+}

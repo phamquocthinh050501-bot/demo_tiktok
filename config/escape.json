@@ -1,0 +1,51 @@
+{
+  "cooldownMs": 120000,
+  "maxConcurrent": 5,
+  "maxChallengeMs": 180000,
+  "caughtMs": 4000,
+  "escapedMs": 3000,
+  "sneakSpeed": 1.8,
+  "runSpeed": 3.6,
+  "sneakVisionFactor": 0.6,
+  "hideVisionFactor": 0.35,
+  "hideRadius": 1.5,
+  "cameraFactor": 2.5,
+  "closeCallDistance": 2,
+  "routeWeights": { "camera": 2, "guard": 3, "checkpoint": 40, "noise": 8 },
+  "badgeRules": {
+    "escape_master": { "wins": 5 },
+    "escape_legend": { "wins": 20 },
+    "office_ghost": { "stealthWins": 3 }
+  },
+  "guard": {
+    "patrolSpeed": 1.6,
+    "investigateSpeed": 2.2,
+    "chaseSpeed": 3.3,
+    "captureRange": 1.2,
+    "captureMs": 1500,
+    "searchMs": 3000,
+    "loseMs": 3000,
+    "repathMs": 300,
+    "scanMs": 2000,
+    "closeRange": 1.5,
+    "chaseVisionFactor": 1.5,
+    "noiseRadius": 7
+  },
+  "bounds": {
+    "guards": [1, 3],
+    "checkpoints": [0, 2],
+    "cameras": [0, 3],
+    "visionRange": [2.5, 9],
+    "visionHalfAngleDeg": [30, 80],
+    "reactionMs": [800, 2000]
+  },
+  "profiles": [
+    { "guards": 1, "checkpoints": 0, "cameras": 0, "visionRange": 3.5, "visionHalfAngleDeg": 40, "reactionMs": 1500 },
+    { "guards": 1, "checkpoints": 0, "cameras": 0, "visionRange": 4.5, "visionHalfAngleDeg": 45, "reactionMs": 1400 },
+    { "guards": 2, "checkpoints": 0, "cameras": 1, "visionRange": 5.5, "visionHalfAngleDeg": 50, "reactionMs": 1300 },
+    { "guards": 2, "checkpoints": 1, "cameras": 1, "visionRange": 6, "visionHalfAngleDeg": 55, "reactionMs": 1200 },
+    { "guards": 3, "checkpoints": 1, "cameras": 1, "visionRange": 6.5, "visionHalfAngleDeg": 60, "reactionMs": 1100 },
+    { "guards": 3, "checkpoints": 1, "cameras": 1, "visionRange": 7, "visionHalfAngleDeg": 65, "reactionMs": 1000 },
+    { "guards": 3, "checkpoints": 2, "cameras": 2, "visionRange": 7, "visionHalfAngleDeg": 70, "reactionMs": 900 }
+  ]
+}

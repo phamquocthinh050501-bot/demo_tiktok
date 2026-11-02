@@ -1,0 +1,20 @@
+{
+  "name": "office-life",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "map": "node tools/genMap.ts",
+    "assets": "node tools/genAssets.ts",
+    "start": "node src/server/main.ts",
+    "demo": "node src/server/main.ts --demo"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0",
+    "ws": "^8.22.1"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "speedTilesPerSec": 3,
+  "joiningMs": 1500,
+  "afkAfterMs": 300000,
+  "offlineAfterMs": 1800000,
+  "danceMs": 5000,
+  "sleepMs": 8000,
+  "characters": ["employee_01", "employee_02", "developer_01", "designer_01", "manager_01"],
+  "moves": {
+    "work":    { "room": "workspace", "object": "work",    "arrive": "WORKING" },
+    "coffee":  { "room": "break",     "object": "coffee",  "arrive": "BREAKING" },
+    "rest":    { "room": "break",                          "arrive": "BREAKING" },
+    "meeting": { "room": "meeting",   "object": "meeting", "arrive": "MEETING" },
+    "game":    { "room": "gaming",    "object": "game",    "arrive": "IDLE", "activity": "game" },
+    "rooftop": { "room": "rooftop",                        "arrive": "IDLE", "activity": "relax" }
+  },
+  "exp": {
+    "window": { "ms": 600000, "max": 150 },
+    "sources": {
+      "checkin":     { "amount": 10 },
+      "work":        { "amount": 2, "everyMs": 10000 },
+      "meeting":     { "amount": 3, "everyMs": 15000 },
+      "event":       { "amount": 5 },
+      "community":   { "amount": 1 },
+      "achievement": { "amount": 20 },
+      "escape":      { "amount": 15 },
+      "escape_caught": { "amount": 3 }
+    }
+  },
+  "passive": { "WORKING": "work", "MEETING": "meeting" },
+  "ranks": [
+    { "id": "probation", "name": "Thử việc",        "minExp": 0 },
+    { "id": "employee",  "name": "Nhân viên",       "minExp": 100 },
+    { "id": "elite",     "name": "Nhân viên ưu tú", "minExp": 300 },
+    { "id": "lead",      "name": "Trưởng nhóm",     "minExp": 700 },
+    { "id": "manager",   "name": "Trưởng phòng",    "minExp": 1500 },
+    { "id": "deputy",    "name": "Phó giám đốc",    "minExp": 3000 },
+    { "id": "director",  "name": "Giám đốc",        "minExp": 6000 }
+  ],
+  "badges": [
+    { "id": "new_employee",   "name": "Nhân viên mới",             "when": { "kind": "join" } },
+    { "id": "hard_worker",    "name": "Chăm chỉ",                  "when": { "kind": "workMs", "value": 600000 } },
+    { "id": "active_member",  "name": "Người tham gia tích cực",   "when": { "kind": "commands", "value": 30 } },
+    { "id": "escape_master",  "name": "Bậc thầy trốn việc",        "when": { "kind": "manual" } },
+    { "id": "close_call",     "name": "Thoát hiểm trong gang tấc", "when": { "kind": "manual" } },
+    { "id": "office_ghost",   "name": "Bóng ma văn phòng",         "when": { "kind": "manual" } },
+    { "id": "escape_legend",  "name": "Huyền thoại trốn việc",     "when": { "kind": "manual" } }
+  ]
+}

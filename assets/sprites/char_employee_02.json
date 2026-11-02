@@ -1,0 +1,121 @@
+{
+ "characterId": "employee_02",
+ "file": "char_employee_02.png",
+ "frameWidth": 32,
+ "frameHeight": 48,
+ "columns": 6,
+ "anims": [
+  {
+   "name": "idle_down",
+   "row": 0,
+   "frames": 2,
+   "fps": 4,
+   "loop": true
+  },
+  {
+   "name": "idle_up",
+   "row": 1,
+   "frames": 2,
+   "fps": 4,
+   "loop": true
+  },
+  {
+   "name": "idle_left",
+   "row": 2,
+   "frames": 2,
+   "fps": 4,
+   "loop": true
+  },
+  {
+   "name": "idle_right",
+   "row": 3,
+   "frames": 2,
+   "fps": 4,
+   "loop": true
+  },
+  {
+   "name": "walk_down",
+   "row": 4,
+   "frames": 4,
+   "fps": 8,
+   "loop": true
+  },
+  {
+   "name": "walk_up",
+   "row": 5,
+   "frames": 4,
+   "fps": 8,
+   "loop": true
+  },
+  {
+   "name": "walk_left",
+   "row": 6,
+   "frames": 4,
+   "fps": 8,
+   "loop": true
+  },
+  {
+   "name": "walk_right",
+   "row": 7,
+   "frames": 4,
+   "fps": 8,
+   "loop": true
+  },
+  {
+   "name": "work",
+   "row": 8,
+   "frames": 4,
+   "fps": 6,
+   "loop": true
+  },
+  {
+   "name": "coffee",
+   "row": 9,
+   "frames": 4,
+   "fps": 5,
+   "loop": true
+  },
+  {
+   "name": "sleep",
+   "row": 10,
+   "frames": 4,
+   "fps": 4,
+   "loop": true
+  },
+  {
+   "name": "sneak",
+   "row": 11,
+   "frames": 4,
+   "fps": 7,
+   "loop": true
+  },
+  {
+   "name": "run",
+   "row": 12,
+   "frames": 6,
+   "fps": 10,
+   "loop": true
+  },
+  {
+   "name": "caught",
+   "row": 13,
+   "frames": 4,
+   "fps": 5,
+   "loop": false
+  },
+  {
+   "name": "celebrate",
+   "row": 14,
+   "frames": 6,
+   "fps": 8,
+   "loop": true
+  },
+  {
+   "name": "dance",
+   "row": 15,
+   "frames": 6,
+   "fps": 8,
+   "loop": true
+  }
+ ]
+}

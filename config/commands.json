@@ -1,0 +1,18 @@
+{
+  "groups": { "join": "Tham gia", "move": "Di chuyển", "emote": "Hoạt động", "escape": "Trốn việc", "info": "Xem thông tin" },
+  "commands": [
+    { "id": "join",       "group": "join",   "aliases": ["vào công ty", "tham gia công ty"], "description": "Tham gia văn phòng, xuất hiện ở sảnh lễ tân" },
+    { "id": "checkin",    "group": "join",   "aliases": ["điểm danh"], "description": "Điểm danh phiên LIVE, nhận EXP một lần mỗi phiên" },
+    { "id": "work",       "group": "move",   "aliases": ["đi làm", "đi làm việc", "làm việc"], "description": "Đến bàn làm việc và tích lũy EXP" },
+    { "id": "coffee",     "group": "move",   "aliases": ["đi uống cà phê", "uống cà phê"], "description": "Đến phòng nghỉ uống cà phê" },
+    { "id": "rest",       "group": "move",   "aliases": ["đi nghỉ", "nghỉ giải lao"], "description": "Nghỉ giải lao ở phòng nghỉ" },
+    { "id": "meeting",    "group": "move",   "aliases": ["đi họp"], "description": "Đến phòng họp" },
+    { "id": "game",       "group": "move",   "aliases": ["đi chơi game", "chơi game"], "description": "Đến phòng giải trí chơi game" },
+    { "id": "rooftop",    "group": "move",   "aliases": ["lên sân thượng"], "description": "Lên sân thượng thư giãn" },
+    { "id": "dance",      "group": "emote",  "aliases": ["nhảy đi", "nhảy"], "description": "Nhảy tại chỗ" },
+    { "id": "sleep",      "group": "emote",  "aliases": ["ngủ một chút", "ngủ gật"], "description": "Ngủ gật tại chỗ" },
+    { "id": "escape",     "group": "escape", "aliases": ["trốn việc"], "description": "Thử trốn khỏi Khu làm việc; bảo vệ sẽ tuần tra và đuổi bắt" },
+    { "id": "view_rank",  "group": "info",   "aliases": ["xem cấp bậc"], "description": "Xem cấp bậc và EXP của mình" },
+    { "id": "view_badge", "group": "info",   "aliases": ["xem thành tích"], "description": "Xem huy hiệu đã đạt" }
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "mapId": "office_main_floor",
+  "tileSize": 32,
+  "width": 20,
+  "height": 32,
+  "collision": [
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##..#####..######..#",
+    "#......#....#......#",
+    "#.###.........####.#",
+    "#.###..............#",
+    "#......#....#......#",
+    "#####..#....#..#####",
+    "####...#....#...##.#",
+    "#..................#",
+    "#..................#",
+    "#......#....#......#",
+    "##..####....#####..#",
+    "#...##.#...........#",
+    "#..................#",
+    "#..................#",
+    "#......#...........#",
+    "#####..##..##..#####",
+    "#..................#",
+    "###.##.##.##.##.##.#",
+    "#..................#",
+    "#..................#",
+    "###.##.##.##.##.##.#",
+    "#..................#",
+    "#########..#########",
+    "#..................#",
+    "#.............####.#",
+    "#..................#",
+    "#..................#",
+    "####################"
+  ],
+  "rooms": [
+    {
+      "id": "rooftop",
+      "name": "Sân thượng",
+      "bounds": {"x":0,"y":0,"w":20,"h":5},
+      "capacity": 24,
+      "spawnPoints": [{"x":2,"y":3}],
+      "doorways": [
+        {"x":2,"y":4,"connectsTo":"meeting"},
+        {"x":3,"y":4,"connectsTo":"meeting"},
+        {"x":9,"y":4,"connectsTo":"hall"},
+        {"x":10,"y":4,"connectsTo":"hall"},
+        {"x":17,"y":4,"connectsTo":"director"},
+        {"x":18,"y":4,"connectsTo":"director"}
+      ],
+      "interactiveObjects": ["roof_exit_01","roof_exit_02","roof_exit_03"]
+    },
+    {
+      "id": "meeting",
+      "name": "Phòng họp",
+      "bounds": {"x":0,"y":4,"w":8,"h":6},
+      "capacity": 16,
+      "spawnPoints": [{"x":2,"y":5}],
+      "doorways": [
+        {"x":2,"y":4,"connectsTo":"rooftop"},
+        {"x":3,"y":4,"connectsTo":"rooftop"},
+        {"x":7,"y":6,"connectsTo":"hall"},
+        {"x":7,"y":7,"connectsTo":"hall"},
+        {"x":5,"y":9,"connectsTo":"gaming"},
+        {"x":6,"y":9,"connectsTo":"gaming"}
+      ],
+      "interactiveObjects": ["meeting_table"]
+    },
+    {
+      "id": "director",
+      "name": "Phòng giám đốc",
+      "bounds": {"x":12,"y":4,"w":8,"h":6},
+      "capacity": 8,
+      "spawnPoints": [{"x":17,"y":5}],
+      "doorways": [
+        {"x":17,"y":4,"connectsTo":"rooftop"},
+        {"x":18,"y":4,"connectsTo":"rooftop"},
+        {"x":12,"y":6,"connectsTo":"hall"},
+        {"x":12,"y":7,"connectsTo":"hall"},
+        {"x":13,"y":9,"connectsTo":"hr"},
+        {"x":14,"y":9,"connectsTo":"hr"}
+      ],
+      "interactiveObjects": ["director_desk"]
+    },
+    {
+      "id": "gaming",
+      "name": "Phòng giải trí",
+      "bounds": {"x":0,"y":9,"w":8,"h":6},
+      "capacity": 12,
+      "spawnPoints": [{"x":5,"y":10}],
+      "doorways": [
+        {"x":5,"y":9,"connectsTo":"meeting"},
+        {"x":6,"y":9,"connectsTo":"meeting"},
+        {"x":7,"y":11,"connectsTo":"hall"},
+        {"x":7,"y":12,"connectsTo":"hall"},
+        {"x":2,"y":14,"connectsTo":"break"},
+        {"x":3,"y":14,"connectsTo":"break"}
+      ],
+      "interactiveObjects": ["arcade_machine_01","arcade_machine_02","arcade_machine_03"]
+    },
+    {
+      "id": "hr",
+      "name": "Phòng nhân sự",
+      "bounds": {"x":12,"y":9,"w":8,"h":6},
+      "capacity": 12,
+      "spawnPoints": [{"x":13,"y":10}],
+      "doorways": [
+        {"x":13,"y":9,"connectsTo":"director"},
+        {"x":14,"y":9,"connectsTo":"director"},
+        {"x":12,"y":11,"connectsTo":"hall"},
+        {"x":12,"y":12,"connectsTo":"hall"},
+        {"x":17,"y":14,"connectsTo":"hall"},
+        {"x":18,"y":14,"connectsTo":"hall"}
+      ],
+      "interactiveObjects": ["hr_terminal"]
+    },
+    {
+      "id": "break",
+      "name": "Phòng nghỉ",
+      "bounds": {"x":0,"y":14,"w":8,"h":6},
+      "capacity": 12,
+      "spawnPoints": [{"x":2,"y":15}],
+      "doorways": [
+        {"x":2,"y":14,"connectsTo":"gaming"},
+        {"x":3,"y":14,"connectsTo":"gaming"},
+        {"x":7,"y":16,"connectsTo":"hall"},
+        {"x":7,"y":17,"connectsTo":"hall"},
+        {"x":5,"y":19,"connectsTo":"workspace"},
+        {"x":6,"y":19,"connectsTo":"workspace"}
+      ],
+      "interactiveObjects": ["coffee_machine"]
+    },
+    {
+      "id": "workspace",
+      "name": "Khu làm việc",
+      "bounds": {"x":0,"y":19,"w":20,"h":8},
+      "capacity": 40,
+      "spawnPoints": [{"x":5,"y":20}],
+      "doorways": [
+        {"x":5,"y":19,"connectsTo":"break"},
+        {"x":6,"y":19,"connectsTo":"break"},
+        {"x":9,"y":19,"connectsTo":"hall"},
+        {"x":10,"y":19,"connectsTo":"hall"},
+        {"x":13,"y":19,"connectsTo":"hall"},
+        {"x":14,"y":19,"connectsTo":"hall"},
+        {"x":9,"y":26,"connectsTo":"lobby"},
+        {"x":10,"y":26,"connectsTo":"lobby"}
+      ],
+      "interactiveObjects": [
+        "work_desk_01",
+        "work_desk_02",
+        "work_desk_03",
+        "work_desk_04",
+        "work_desk_05",
+        "work_desk_06",
+        "work_desk_07",
+        "work_desk_08",
+        "work_desk_09",
+        "work_desk_10",
+        "work_desk_11",
+        "work_desk_12"
+      ]
+    },
+    {
+      "id": "lobby",
+      "name": "Sảnh lễ tân",
+      "bounds": {"x":0,"y":26,"w":20,"h":6},
+      "capacity": 60,
+      "spawnPoints": [{"x":3,"y":29},{"x":5,"y":30},{"x":8,"y":29},{"x":11,"y":30},{"x":13,"y":29},{"x":16,"y":30}],
+      "doorways": [{"x":9,"y":26,"connectsTo":"workspace"},{"x":10,"y":26,"connectsTo":"workspace"}],
+      "interactiveObjects": ["reception_desk"]
+    }
+  ],
+  "objects": [
+    {
+      "id": "reception_desk",
+      "room": "lobby",
+      "type": "desk",
+      "action": "checkin",
+      "block": {"x":14,"y":28,"w":4,"h":1},
+      "stands": [{"x":15,"y":29},{"x":16,"y":29}]
+    },
+    {
+      "id": "work_desk_01",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":1,"y":21,"w":2,"h":1},
+      "stands": [{"x":1,"y":22}]
+    },
+    {
+      "id": "work_desk_02",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":4,"y":21,"w":2,"h":1},
+      "stands": [{"x":4,"y":22}]
+    },
+    {
+      "id": "work_desk_03",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":7,"y":21,"w":2,"h":1},
+      "stands": [{"x":7,"y":22}]
+    },
+    {
+      "id": "work_desk_04",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":10,"y":21,"w":2,"h":1},
+      "stands": [{"x":10,"y":22}]
+    },
+    {
+      "id": "work_desk_05",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":13,"y":21,"w":2,"h":1},
+      "stands": [{"x":13,"y":22}]
+    },
+    {
+      "id": "work_desk_06",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":16,"y":21,"w":2,"h":1},
+      "stands": [{"x":16,"y":22}]
+    },
+    {
+      "id": "work_desk_07",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":1,"y":24,"w":2,"h":1},
+      "stands": [{"x":1,"y":25}]
+    },
+    {
+      "id": "work_desk_08",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":4,"y":24,"w":2,"h":1},
+      "stands": [{"x":4,"y":25}]
+    },
+    {
+      "id": "work_desk_09",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":7,"y":24,"w":2,"h":1},
+      "stands": [{"x":7,"y":25}]
+    },
+    {
+      "id": "work_desk_10",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":10,"y":24,"w":2,"h":1},
+      "stands": [{"x":10,"y":25}]
+    },
+    {
+      "id": "work_desk_11",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":13,"y":24,"w":2,"h":1},
+      "stands": [{"x":13,"y":25}]
+    },
+    {
+      "id": "work_desk_12",
+      "room": "workspace",
+      "type": "desk",
+      "action": "work",
+      "block": {"x":16,"y":24,"w":2,"h":1},
+      "stands": [{"x":16,"y":25}]
+    },
+    {
+      "id": "meeting_table",
+      "room": "meeting",
+      "type": "table",
+      "action": "meeting",
+      "block": {"x":2,"y":6,"w":3,"h":2},
+      "stands": [
+        {"x":2,"y":5},
+        {"x":3,"y":5},
+        {"x":4,"y":5},
+        {"x":2,"y":8},
+        {"x":3,"y":8},
+        {"x":4,"y":8},
+        {"x":1,"y":6},
+        {"x":1,"y":7},
+        {"x":5,"y":6},
+        {"x":5,"y":7}
+      ]
+    },
+    {
+      "id": "arcade_machine_01",
+      "room": "gaming",
+      "type": "machine",
+      "action": "game",
+      "block": {"x":1,"y":10,"w":1,"h":1},
+      "stands": [{"x":1,"y":11}]
+    },
+    {
+      "id": "arcade_machine_02",
+      "room": "gaming",
+      "type": "machine",
+      "action": "game",
+      "block": {"x":2,"y":10,"w":1,"h":1},
+      "stands": [{"x":2,"y":11}]
+    },
+    {
+      "id": "arcade_machine_03",
+      "room": "gaming",
+      "type": "machine",
+      "action": "game",
+      "block": {"x":3,"y":10,"w":1,"h":1},
+      "stands": [{"x":3,"y":11}]
+    },
+    {
+      "id": "coffee_machine",
+      "room": "break",
+      "type": "machine",
+      "action": "coffee",
+      "block": {"x":4,"y":15,"w":2,"h":1},
+      "stands": [{"x":4,"y":16},{"x":5,"y":16}]
+    },
+    {
+      "id": "hr_terminal",
+      "room": "hr",
+      "type": "terminal",
+      "action": "view_rank",
+      "block": {"x":16,"y":10,"w":2,"h":1},
+      "stands": [{"x":16,"y":11},{"x":17,"y":11}]
+    },
+    {
+      "id": "director_desk",
+      "room": "director",
+      "type": "desk",
+      "action": "ceremony",
+      "block": {"x":14,"y":6,"w":4,"h":1},
+      "stands": [{"x":15,"y":7},{"x":16,"y":7}]
+    },
+    {"id":"roof_exit_01","room":"rooftop","type":"exit","action":"escape","stands":[{"x":10,"y":2}]},
+    {"id":"roof_exit_02","room":"rooftop","type":"exit","action":"escape","stands":[{"x":16,"y":2}]},
+    {"id":"roof_exit_03","room":"rooftop","type":"exit","action":"escape","stands":[{"x":3,"y":2}]}
+  ],
+  "zones": {
+    "safe": [{"id":"safe_lobby","x":1,"y":27,"w":18,"h":4}],
+    "vision": [
+      {"id":"cam_hall","x":8,"y":5,"w":4,"h":14},
+      {"id":"cam_right","x":13,"y":5,"w":6,"h":14},
+      {"id":"cam_left","x":1,"y":5,"w":6,"h":14}
+    ],
+    "noise": [{"id":"noise_gaming","x":1,"y":10,"w":6,"h":4}],
+    "hide": [
+      {"id":"hide_director","x":18,"y":8},
+      {"id":"hide_hr","x":18,"y":12},
+      {"id":"hide_break","x":1,"y":18}
+    ],
+    "checkpoint": [{"id":"cp_left","x":1,"y":12},{"id":"cp_hall","x":10,"y":12},{"id":"cp_right","x":18,"y":12}]
+  },
+  "escapeRoutes": [
+    {
+      "id": "route_short",
+      "name": "Thẳng qua hành lang",
+      "risk": "high",
+      "start": {"x":10,"y":22},
+      "exit": "roof_exit_01",
+      "waypoints": [{"x":10,"y":20},{"x":10,"y":12},{"x":10,"y":5},{"x":10,"y":3}]
+    },
+    {
+      "id": "route_hide",
+      "name": "Qua phòng giám đốc",
+      "risk": "medium",
+      "start": {"x":10,"y":22},
+      "exit": "roof_exit_02",
+      "waypoints": [
+        {"x":14,"y":20},
+        {"x":14,"y":18},
+        {"x":17,"y":15},
+        {"x":17,"y":13},
+        {"x":13,"y":10},
+        {"x":13,"y":8},
+        {"x":17,"y":5},
+        {"x":17,"y":3}
+      ]
+    },
+    {
+      "id": "route_long",
+      "name": "Vòng bên trái",
+      "risk": "low",
+      "start": {"x":10,"y":22},
+      "exit": "roof_exit_03",
+      "waypoints": [
+        {"x":5,"y":20},
+        {"x":5,"y":18},
+        {"x":1,"y":17},
+        {"x":3,"y":15},
+        {"x":3,"y":13},
+        {"x":6,"y":12},
+        {"x":5,"y":10},
+        {"x":5,"y":8},
+        {"x":1,"y":7},
+        {"x":2,"y":5},
+        {"x":2,"y":3}
+      ]
+    }
+  ],
+  "patrolRoutes": [
+    {"id":"guard_hall","waypoints":[{"x":9,"y":6},{"x":11,"y":6},{"x":11,"y":17},{"x":9,"y":17}]},
+    {"id":"guard_roof","waypoints":[{"x":2,"y":2},{"x":17,"y":2}]},
+    {"id":"guard_workspace","waypoints":[{"x":2,"y":20},{"x":8,"y":20}]}
+  ]
+}

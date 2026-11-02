@@ -1,0 +1,79 @@
+{
+  "likes": {
+    "pointsPerLike": 1,
+    "energyPerLike": 0.05,
+    "milestones": [
+      { "at": 100, "units": 1 },
+      { "at": 500, "units": 2 },
+      { "at": 1000, "units": 3 },
+      { "at": 5000, "units": 5 }
+    ],
+    "fxMinIntervalMs": 500,
+    "fxMaxIntensity": 20,
+    "energyEvent": "productivity_contest"
+  },
+  "gifts": {
+    "_note": "Các quà dưới đây chỉ là MẪU để sửa khi đã biết giá trị provider thật trả về; khớp theo giftId, rồi tên, rồi mức value, cuối cùng là default.",
+    "rules": [
+      { "giftId": "rose", "giftName": "Hoa hồng", "effects": [{ "type": "fx", "name": "hearts" }, { "type": "energy", "amount": 2 }, { "type": "exp" }] },
+      { "giftName": "Ly cà phê", "effects": [{ "type": "fx", "name": "sparkle" }, { "type": "energy", "amount": 3 }] }
+    ],
+    "tiers": [
+      { "minValue": 1, "effects": [{ "type": "fx", "name": "sparkle" }, { "type": "energy", "amount": 1 }, { "type": "exp" }] },
+      { "minValue": 100, "effects": [{ "type": "fx", "name": "confetti" }, { "type": "energy", "amount": 5 }, { "type": "exp" }, { "type": "escape_ticket" }] },
+      { "minValue": 500, "effects": [{ "type": "fx", "name": "confetti" }, { "type": "energy", "amount": 10 }, { "type": "exp" }, { "type": "escape_ticket" }, { "type": "random_event" }] }
+    ],
+    "default": { "effects": [{ "type": "fx", "name": "sparkle" }, { "type": "energy", "amount": 1 }] },
+    "perUser": { "windowMs": 600000, "maxUnits": 20 },
+    "effectCooldownMs": { "random_event": 120000 },
+    "maxTickets": 1,
+    "ticketTtlMs": 1800000,
+    "feedMaxPerSec": 5
+  },
+  "events": [
+    { "id": "shift_start", "name": "Bắt đầu ca làm", "durationMs": 300000, "minIntervalMs": 3600000,
+      "announce": "Ca làm mới bắt đầu! Ai đi làm sẽ nhận thêm EXP.",
+      "effects": [{ "type": "gather", "room": "workspace", "object": "work", "arrive": "WORKING" }, { "type": "expFactor", "source": "work", "factor": 1.5 }] },
+    { "id": "lunch", "name": "Giờ nghỉ trưa", "durationMs": 600000, "minIntervalMs": 3600000,
+      "announce": "Đến giờ nghỉ trưa, mời mọi người xuống phòng nghỉ!",
+      "effects": [{ "type": "gather", "room": "break", "object": "coffee", "arrive": "BREAKING" }] },
+    { "id": "inspection", "name": "Kiểm tra đột xuất", "durationMs": 120000, "minIntervalMs": 900000,
+      "announce": "Kiểm tra đột xuất! Ai đang ngồi làm việc được thưởng, bảo vệ cảnh giác hơn.",
+      "effects": [{ "type": "grantWorking", "source": "event" }, { "type": "visionFactor", "factor": 1.25 }] },
+    { "id": "all_hands", "name": "Họp toàn công ty", "durationMs": 300000, "minIntervalMs": 3600000,
+      "announce": "Họp toàn công ty! Mời mọi người về phòng họp.",
+      "effects": [{ "type": "gather", "room": "meeting", "object": "meeting", "arrive": "MEETING" }, { "type": "expFactor", "source": "meeting", "factor": 2 }] },
+    { "id": "blackout", "name": "Mất điện", "durationMs": 90000, "minIntervalMs": 1200000,
+      "announce": "Mất điện! Camera ngừng hoạt động, máy tính tạm nghỉ.",
+      "effects": [{ "type": "camerasOff" }, { "type": "expFactor", "source": "work", "factor": 0 }, { "type": "visionFactor", "factor": 0.6 }] },
+    { "id": "printer_jam", "name": "Máy in kẹt giấy", "durationMs": 120000, "minIntervalMs": 600000,
+      "announce": "Máy in kẹt giấy! Công việc chậm lại.",
+      "effects": [{ "type": "expFactor", "source": "work", "factor": 0.5 }] },
+    { "id": "birthday", "name": "Sinh nhật nhân viên", "durationMs": 60000, "minIntervalMs": 1800000,
+      "announce": "Hôm nay có sinh nhật nhân viên, cả công ty cùng chúc mừng!",
+      "effects": [{ "type": "birthday" }] },
+    { "id": "productivity_contest", "name": "Thi đua năng suất", "durationMs": 300000, "minIntervalMs": 1800000,
+      "announce": "Thi đua năng suất bắt đầu! Ai làm việc nhiều nhất sẽ được thưởng.",
+      "effects": [{ "type": "contest" }] },
+    { "id": "shift_end", "name": "Kết thúc ngày làm", "durationMs": 120000, "minIntervalMs": 3600000,
+      "announce": "Kết thúc ngày làm, hẹn gặp lại ngày mai!",
+      "effects": [{ "type": "gather", "room": "lobby", "arrive": "IDLE" }] }
+  ],
+  "schedule": [
+    { "event": "shift_start", "atMs": 0 },
+    { "event": "lunch", "atMs": 2400000 },
+    { "event": "all_hands", "atMs": 4500000 }
+  ],
+  "random": {
+    "checkEveryMs": 30000,
+    "globalMinGapMs": 120000,
+    "maxQueue": 3,
+    "events": [
+      { "id": "inspection", "chance": 0.08 },
+      { "id": "blackout", "chance": 0.04 },
+      { "id": "printer_jam", "chance": 0.06 },
+      { "id": "birthday", "chance": 0.05 },
+      { "id": "productivity_contest", "chance": 0.04 }
+    ]
+  }
+}
